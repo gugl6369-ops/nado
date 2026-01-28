@@ -1,4 +1,5 @@
 # nado
+```css
 @mixin leaner-border{
   position: relative;
   justify-content: center;
@@ -14,8 +15,10 @@
     z-index: -1;
   }
 }
+```
 
 # ТОЛИНО ГОВНО!!!
+```vue
 <script setup lang="ts">
 import {AppButton, AppInput} from "@/shared";
 import {reactive, ref} from "vue";
@@ -74,4 +77,5 @@ const [confirmPassword, confirmPasswordAttrs] = defineField("confirmPassword")
   @include linear-border;
 }
 </style>
+```
 
