@@ -78,5 +78,127 @@ const [confirmPassword, confirmPasswordAttrs] = defineField("confirmPassword")
 }
 </style>
 ```
+##Input
 
-asdasdasadad
+```
+<script setup lang="ts">
+import { vMaska } from 'maska/vue'
+import {AppIcon, inputVariants, type InputVariants} from '@/shared'
+import {computed, ref} from "vue";
+
+interface Props {
+  error?: string
+  disabled?: boolean
+  type?: string
+  placeholder?: string
+  mask?: string
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  type: 'text',
+  disabled: false,
+  size: 'md',
+  error: undefined,
+  placeholder: '',
+  mask: '',
+})
+
+const check = ref<boolean>(false)
+const model = defineModel<string>()
+
+const checkPassword = () =>{
+  check.value = !check.value
+}
+
+const checkType = computed<string>(() =>{
+  if (check.value && props.type === 'password') return 'text'
+  if ( !check.value && props.type === 'password') return 'password'
+  return props.type
+});
+</script>
+
+
+<template>
+  <div class="flex flex-col transition duration-500 ">
+    <transition
+      name="errorShow"
+      class="text-primary-orange pl-5 text-xs transition duration-500 pb-2"
+    >
+      <p v-if="error">
+        {{error}}
+      </p>
+    </transition>
+    <label
+      :class="inputVariants({ error: !!error, disabled })"
+    >
+      <input
+        v-maska
+        :data-maska="mask"
+        :type="checkType"
+        :value="modelValue"
+        :placeholder="placeholder"
+        :disabled="disabled"
+        :error="error"
+        v-model="model"
+        required
+      >
+      <template v-if="type === 'password'">
+        <template v-if="check === true">
+          <app-icon
+            name="password-open"
+            class="cursor-pointer hover:opacity-70 transition-opacity duration-300"
+            @click="checkPassword"
+          />
+        </template>
+        <template v-else>
+          <app-icon
+            name="password-lock"
+            class="cursor-pointer hover:opacity-70 transition-opacity duration-300"
+            @click="checkPassword"
+          />
+        </template>
+      </template>
+    </label>
+  </div>
+</template>
+
+<style lang="scss" scoped>
+.errorShow-enter-active{
+  max-height: 15px;
+  transition: .2s ease-in-out;
+  transform: translateY(20px);
+}
+.errorShow-enter-from {
+  max-height: 0;
+  padding-bottom: 0;
+  opacity: 0;
+  transform: translateY(10px);
+}
+.errorShow-leave-active{
+  max-height: 15px;
+  padding-bottom: 8px;
+  transition: 0.5s ease-in-out;
+}
+.errorShow-leave-to {
+  max-height: 0;
+  padding-bottom: 0;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: .3s;
+}
+input{
+  width: 100%;
+  outline: none;
+}
+label{
+  justify-content: center;
+  align-items: center;
+
+  &:has(input:focus){
+    background-color: #212121;
+  }
+}
+
+</style>
+
+```
