@@ -208,4 +208,5 @@ label{
 
 ASCII 
 (https://codepen.io/erevan/pen/MYKBjdZ)
+(https://skkv-itmo.gitbook.io/c-cpp-cookies)
 
