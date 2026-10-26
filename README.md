@@ -209,14 +209,3 @@ label{
 ASCII 
 (https://codepen.io/erevan/pen/MYKBjdZ)
 (https://skkv-itmo.gitbook.io/c-cpp-cookies)
-
-
-
-https://www.figma.com/design/s8jyxL6G2ZErEKsq1imbP8/Untitled?node-id=0-1&t=PlO7JPHQAbTvSez5-1
-
-
-
-https://drive.google.com/file/d/14N9zN7aO2acrTlOqCGHxa6bPx28fsTBf/view?usp=sharing
-
-
-https://docs.google.com/document/d/1nO8vtNii24KwEbv7L8GMe-S0wPQGR6074vIOX7oW7ok/edit?usp=sharing
