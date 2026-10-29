@@ -1,4 +1,4 @@
-# nado
+9# nado
 ```css
 @mixin leaner-border{
   position: relative;
@@ -209,3 +209,4 @@ label{
 ASCII 
 (https://codepen.io/erevan/pen/MYKBjdZ)
 (https://skkv-itmo.gitbook.io/c-cpp-cookies)
+https://www.figma.com/design/s8jyxL6G2ZErEKsq1imbP8/Untitled?node-id=0-1&t=PlO7JPHQAbTvSez5-1
